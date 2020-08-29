@@ -43661,10 +43661,13 @@
       <e p="UE4Game.Target.cs" t="Include" />
     </e>
     <e p="F:\ShootGame" t="IncludeFlat">
+      <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
       <e p="Config" t="Include">
         <e p="DefaultEditor.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
         <e p="DefaultGame.ini" t="Include" />
+        <e p="DefaultInput.ini" t="Include" />
       </e>
       <e p="Engine" t="Include" />
       <e p="Games" t="Include" />
@@ -43673,11 +43676,19 @@
         <e p="ShootGame.vcxproj" t="IncludeRecursive" />
         <e p="UE4.vcxproj" t="IncludeRecursive" />
       </e>
+      <e p="LICENSE" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
       <e p="ShootGame.sln" t="IncludeFlat" />
       <e p="ShootGame.uproject" t="Include" />
       <e p="Source" t="Include">
         <e p="ShootGame" t="Include">
+          <e p="Private" t="Include">
+            <e p="FPSCharacter.cpp" t="Include" />
+          </e>
+          <e p="Public" t="Include">
+            <e p="FPSCharacter.h" t="Include" />
+          </e>
           <e p="ShootGame.Build.cs" t="Include" />
           <e p="ShootGame.cpp" t="Include" />
           <e p="ShootGame.h" t="Include" />
