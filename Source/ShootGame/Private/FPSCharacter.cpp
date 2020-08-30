@@ -14,8 +14,6 @@ AFPSCharacter::AFPSCharacter()
     SpringArmComponent->bUsePawnControlRotation = true;
     SpringArmComponent->SetupAttachment(RootComponent);
 
-    GetMovementComponent()->GetNavAgentPropertiesRef().bCanCrouch = true;
-    
     CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
     CameraComponent->SetupAttachment(SpringArmComponent);
 }
@@ -44,6 +42,8 @@ void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
     PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AFPSCharacter::BeginCrouch);
     PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFPSCharacter::EndCrouch);
+
+    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFPSCharacter::Jump);
 }
 
 void AFPSCharacter::MoveForward(float Value)
