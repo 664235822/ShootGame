@@ -2,7 +2,7 @@
 
 
 #include "FPSCharacter.h"
-#include "GameFramework/PawnMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AFPSCharacter::AFPSCharacter()
@@ -44,6 +44,16 @@ void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
     PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFPSCharacter::EndCrouch);
 
     PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFPSCharacter::Jump);
+}
+
+FVector AFPSCharacter::GetPawnViewLocation() const
+{
+    if (CameraComponent)
+    {
+        return CameraComponent->GetComponentLocation();
+    }
+
+    return Super::GetPawnViewLocation();
 }
 
 void AFPSCharacter::MoveForward(float Value)
