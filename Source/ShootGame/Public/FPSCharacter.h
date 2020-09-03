@@ -28,11 +28,17 @@ protected:
 
     void MoveRight(float Value);
 
+    void StartFire();
+
+    void StopFire();
+
     void BeginCrouch();
 
     void EndCrouch();
 
-    void Fire();
+    void BeginZoom();
+
+    void EndZoom();
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     UCameraComponent* CameraComponent;
@@ -40,9 +46,24 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     USpringArmComponent* SpringArmComponent;
 
+    AFPSWeapon* CurrentWeapon;
+    
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
     TSubclassOf<AFPSWeapon> WeaponClass;
 
+    UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
+    FName WeaponSocketName;
+
+    bool bWantToZoom;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Player")
+    float ZoomedFOV;
+
+    float DefaultFOV;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1f, ClampMax = 100.0f))
+    float ZoomInterpSpeed;
+    
 public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;
