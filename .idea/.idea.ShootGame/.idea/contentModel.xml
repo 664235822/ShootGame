@@ -43685,11 +43685,13 @@
         <e p="ShootGame" t="Include">
           <e p="Private" t="Include">
             <e p="FPSCharacter.cpp" t="Include" />
+            <e p="FPSHealthComponent.cpp" t="Include" />
             <e p="FPSWeapon.cpp" t="Include" />
             <e p="ProjectileWeapon.cpp" t="Include" />
           </e>
           <e p="Public" t="Include">
             <e p="FPSCharacter.h" t="Include" />
+            <e p="FPSHealthComponent.h" t="Include" />
             <e p="FPSWeapon.h" t="Include" />
             <e p="ProjectileWeapon.h" t="Include" />
           </e>

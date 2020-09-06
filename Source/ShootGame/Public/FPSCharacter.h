@@ -3,12 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
+#include "FPSHealthComponent.h"
 #include "FPSWeapon.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
-
 #include "FPSCharacter.generated.h"
 
 UCLASS()
@@ -40,14 +39,21 @@ protected:
 
     void EndZoom();
 
+    UFUNCTION()
+    void OnHealthChanged(UFPSHealthComponent* HealthComponent, float Health, float HealthDelta,
+                         const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
+
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     UCameraComponent* CameraComponent;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     USpringArmComponent* SpringArmComponent;
 
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    UFPSHealthComponent* FPSHealthComponent;
+
     AFPSWeapon* CurrentWeapon;
-    
+
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
     TSubclassOf<AFPSWeapon> WeaponClass;
 
@@ -63,7 +69,10 @@ protected:
 
     UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1f, ClampMax = 100.0f))
     float ZoomInterpSpeed;
-    
+
+    UPROPERTY(BlueprintReadOnly, Category = "Player")
+    bool bDied = false;
+
 public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;

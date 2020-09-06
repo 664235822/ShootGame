@@ -56,7 +56,7 @@ void AFPSWeapon::Fire()
         FVector TraceEndPoint = TraceEnd;
 
         FHitResult Hit;
-        if (GetWorld()->LineTraceSingleByChannel(Hit, EyeLocation, TraceEnd, ECC_Visibility, QueryOParams))
+        if (GetWorld()->LineTraceSingleByChannel(Hit, EyeLocation, TraceEnd, COLLISION_WEAPON, QueryOParams))
         {
             AActor* HitActor = Hit.GetActor();
 
