@@ -4,6 +4,7 @@
 #include "FPSCharacter.h"
 #include "GameFramework/PawnMovementComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 AFPSCharacter::AFPSCharacter()
@@ -32,20 +33,22 @@ void AFPSCharacter::BeginPlay()
     Super::BeginPlay();
 
     DefaultFOV = CameraComponent->FieldOfView;
-
-    FActorSpawnParameters SpawnParameters;
-    SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-
-    CurrentWeapon = GetWorld()->SpawnActor<AFPSWeapon>(WeaponClass, FVector::ZeroVector, FRotator::ZeroRotator,
-                                                       SpawnParameters);
-    if (CurrentWeapon)
-    {
-        CurrentWeapon->SetOwner(this);
-        CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale,
-                                         WeaponSocketName);
-    }
-
     FPSHealthComponent->OnHealthChanged.AddDynamic(this, &AFPSCharacter::OnHealthChanged);
+
+    if (GetLocalRole() == ROLE_Authority)
+    {
+        FActorSpawnParameters SpawnParameters;
+        SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+        CurrentWeapon = GetWorld()->SpawnActor<AFPSWeapon>(WeaponClass, FVector::ZeroVector, FRotator::ZeroRotator,
+                                                           SpawnParameters);
+        if (CurrentWeapon)
+        {
+            CurrentWeapon->SetOwner(this);
+            CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale,
+                                             WeaponSocketName);
+        }
+    }
 }
 
 // Called every frame
@@ -143,7 +146,7 @@ void AFPSCharacter::OnHealthChanged(UFPSHealthComponent* HealthComponent, float 
     if (Health <= 0.0f && !bDied)
     {
         bDied = true;
-        
+
         GetMovementComponent()->StopMovementImmediately();
 
         GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
@@ -152,4 +155,12 @@ void AFPSCharacter::OnHealthChanged(UFPSHealthComponent* HealthComponent, float 
 
         SetLifeSpan(10.0f);
     }
+}
+
+void AFPSCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+    DOREPLIFETIME(AFPSCharacter, CurrentWeapon);
+    DOREPLIFETIME(AFPSCharacter, bDied);
 }

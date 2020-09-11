@@ -6,6 +6,18 @@
 #include "GameFramework/Actor.h"
 #include "FPSWeapon.generated.h"
 
+USTRUCT()
+struct FHitScanTrace
+{
+    GENERATED_BODY();
+   
+    UPROPERTY()
+    TEnumAsByte<EPhysicalSurface> SurfaceType;
+
+    UPROPERTY()
+    FVector_NetQuantize TraceTo;
+};
+
 UCLASS()
 class SHOOTGAME_API AFPSWeapon : public AActor
 {
@@ -20,9 +32,14 @@ protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
 
+    UFUNCTION(Server, Reliable, WithValidation)
+    void ServerFire();
+
     virtual void Fire();
 
     void PlayFireEffect(FVector TraceEndPoint);
+
+    void PlayImpactEffect(EPhysicalSurface SurfaceType, FVector ImpactPoint);
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     USkeletalMeshComponent* SkeletalMeshComponent;
@@ -62,6 +79,12 @@ protected:
     float RateOfFire;
 
     float TimeBetweenShots;
+
+    UPROPERTY(ReplicatedUsing = OnRep_HitScanTrace)
+    FHitScanTrace HitScanTrace;
+
+    UFUNCTION()
+    void OnRep_HitScanTrace();
 
 public:
 

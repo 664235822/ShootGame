@@ -15,19 +15,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Core/Public/IOS/IOSPlatformCompilerSetup.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/ThirdParty/PhysX3/APEX_1.4/include/ApexDefs.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/ProjectileWeapon.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Core/Public/HAL/IConsoleManager.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/ShootGame.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/ShootGame.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -38,11 +41,11 @@
         <option value="$PROJECT_DIR$/Source/ShootGame/public/FPSPlayerController.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/ProjectileWeapon.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/ShootGame.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
       </list>
@@ -296,6 +299,8 @@
       <workItem from="1599221699124" duration="3773000" />
       <workItem from="1599294290161" duration="3945000" />
       <workItem from="1599298313523" duration="1510000" />
+      <workItem from="1599748308161" duration="3593000" />
+      <workItem from="1599817761212" duration="5224000" />
     </task>
     <servers />
   </component>
@@ -316,22 +321,22 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="517" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1676.902@0.0.1676.902" timestamp="1599028486126" />
-    <state width="1632" height="233" key="GridCell.Tab.0.bottom" timestamp="1599310232519">
+    <state width="1632" height="233" key="GridCell.Tab.0.bottom" timestamp="1599823456152">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1599310232519" />
-    <state width="1632" height="233" key="GridCell.Tab.0.center" timestamp="1599310232519">
+    <state width="1632" height="233" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
+    <state width="1632" height="233" key="GridCell.Tab.0.center" timestamp="1599823456152">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1599310232519" />
-    <state width="1632" height="233" key="GridCell.Tab.0.left" timestamp="1599310232519">
+    <state width="1632" height="233" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
+    <state width="1632" height="233" key="GridCell.Tab.0.left" timestamp="1599823456152">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1599310232519" />
-    <state width="1632" height="233" key="GridCell.Tab.0.right" timestamp="1599310232519">
+    <state width="1632" height="233" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
+    <state width="1632" height="233" key="GridCell.Tab.0.right" timestamp="1599823456152">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1599310232519" />
+    <state width="1632" height="233" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
     <state width="1632" height="319" key="GridCell.Tab.1.bottom" timestamp="1599071322838">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
@@ -380,9 +385,9 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1632" height="319" key="GridCell.Tab.3.right/0.0.1676.902@0.0.1676.902" timestamp="1599071322839" />
-    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1599295745539">
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1599822781684">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1599295745539" />
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1599822781684" />
   </component>
 </project>

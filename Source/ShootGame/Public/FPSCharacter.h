@@ -52,6 +52,7 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     UFPSHealthComponent* FPSHealthComponent;
 
+    UPROPERTY(Replicated)
     AFPSWeapon* CurrentWeapon;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
@@ -70,7 +71,7 @@ protected:
     UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1f, ClampMax = 100.0f))
     float ZoomInterpSpeed;
 
-    UPROPERTY(BlueprintReadOnly, Category = "Player")
+    UPROPERTY(Replicated, BlueprintReadOnly, Category = "Player")
     bool bDied = false;
 
 public:

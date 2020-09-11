@@ -2,6 +2,7 @@
 
 
 #include "FPSHealthComponent.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values for this component's properties
 UFPSHealthComponent::UFPSHealthComponent()
@@ -11,6 +12,8 @@ UFPSHealthComponent::UFPSHealthComponent()
     // PrimaryComponentTick.bCanEverTick = true;
 
     DefaultHealth = 100.0f;
+
+    SetIsReplicated(true);
 }
 
 
@@ -19,10 +22,13 @@ void UFPSHealthComponent::BeginPlay()
 {
     Super::BeginPlay();
 
-    AActor* MyOwner = GetOwner();
-    if (MyOwner)
+    if (GetOwnerRole() == ROLE_Authority)
     {
-        MyOwner->OnTakeAnyDamage.AddDynamic(this, &UFPSHealthComponent::HandleTakeAnyDamage);
+        AActor* MyOwner = GetOwner();
+        if (MyOwner)
+        {
+            MyOwner->OnTakeAnyDamage.AddDynamic(this, &UFPSHealthComponent::HandleTakeAnyDamage);
+        }
     }
 
     Health = DefaultHealth;
@@ -39,4 +45,11 @@ void UFPSHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage
     Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
 
     OnHealthChanged.Broadcast(this, Health, Damage, DamageType, InstigatedBy, DamageCauser);
+}
+
+void UFPSHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+    DOREPLIFETIME(UFPSHealthComponent, Health);
 }

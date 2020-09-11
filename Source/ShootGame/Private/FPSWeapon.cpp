@@ -9,6 +9,7 @@
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "ShootGame/ShootGame.h"
 #include "Engine/Public/TimerManager.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 AFPSWeapon::AFPSWeapon()
@@ -25,6 +26,11 @@ AFPSWeapon::AFPSWeapon()
     BaseDamage = 20.0f;
 
     RateOfFire = 600.0f;
+
+    SetReplicates(true);
+
+    NetUpdateFrequency = 66.0f;
+    MinNetUpdateFrequency = 33.0f;
 }
 
 // Called when the game starts or when spawned
@@ -35,8 +41,23 @@ void AFPSWeapon::BeginPlay()
     TimeBetweenShots = 60.0f / RateOfFire;
 }
 
+void AFPSWeapon::ServerFire_Implementation()
+{
+    Fire();
+}
+
+bool AFPSWeapon::ServerFire_Validate()
+{
+    return true;
+}
+
 void AFPSWeapon::Fire()
 {
+    if (GetLocalRole() < ROLE_Authority)
+    {
+        ServerFire();
+    }
+
     AActor* MyOwner = GetOwner();
     if (MyOwner)
     {
@@ -55,12 +76,14 @@ void AFPSWeapon::Fire()
 
         FVector TraceEndPoint = TraceEnd;
 
+        EPhysicalSurface SurfaceType = SurfaceType_Default;
+
         FHitResult Hit;
         if (GetWorld()->LineTraceSingleByChannel(Hit, EyeLocation, TraceEnd, COLLISION_WEAPON, QueryOParams))
         {
             AActor* HitActor = Hit.GetActor();
 
-            EPhysicalSurface SurfaceType = UPhysicalMaterial::DetermineSurfaceType(Hit.PhysMaterial.Get());
+            SurfaceType = UPhysicalMaterial::DetermineSurfaceType(Hit.PhysMaterial.Get());
 
             float CurrentDamage = BaseDamage;
 
@@ -73,28 +96,18 @@ void AFPSWeapon::Fire()
                                                MyOwner->GetInstigatorController(),
                                                this, DamageType);
 
-            UParticleSystem* SelectEffect = nullptr;
-            switch (SurfaceType)
-            {
-            case SURFACE_FLESHDEFAULT:
-            case SURFACE_FLESHVULNERABLE:
-                SelectEffect = FleshImpactEffect;
-                break;
-            default:
-                SelectEffect = DefaultImpactEffect;
-                break;
-            }
-
-            if (SelectEffect)
-            {
-                UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), SelectEffect, Hit.ImpactPoint,
-                                                         Hit.ImpactNormal.Rotation());
-            }
+            PlayImpactEffect(SurfaceType, Hit.ImpactPoint);
 
             TraceEndPoint = Hit.ImpactPoint;
         }
 
         PlayFireEffect(TraceEndPoint);
+
+        if (GetLocalRole() == ROLE_Authority)
+        {
+            HitScanTrace.TraceTo = TraceEndPoint;
+            HitScanTrace.SurfaceType = SurfaceType;
+        }
 
         LastFireTime = GetWorld()->TimeSeconds;
     }
@@ -130,6 +143,39 @@ void AFPSWeapon::PlayFireEffect(FVector TraceEndPoint)
     }
 }
 
+void AFPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector ImpactPoint)
+{
+    UParticleSystem* SelectEffect = nullptr;
+    switch (SurfaceType)
+    {
+    case SURFACE_FLESHDEFAULT:
+    case SURFACE_FLESHVULNERABLE:
+        SelectEffect = FleshImpactEffect;
+        break;
+    default:
+        SelectEffect = DefaultImpactEffect;
+        break;
+    }
+
+    if (SelectEffect)
+    {
+        FVector MuzzleLocation = SkeletalMeshComponent->GetSocketLocation(MuzzleSocketName);
+
+        FVector TraceDirection = ImpactPoint - MuzzleLocation;
+        TraceDirection.Normalize();
+
+        UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), SelectEffect, ImpactPoint,
+                                                 TraceDirection.Rotation());
+    }
+}
+
+void AFPSWeapon::OnRep_HitScanTrace()
+{
+    PlayFireEffect(HitScanTrace.TraceTo);
+
+    PlayImpactEffect(HitScanTrace.SurfaceType, HitScanTrace.TraceTo);
+}
+
 void AFPSWeapon::StartFire()
 {
     float FirstDelay = FMath::Max(LastFireTime + TimeBetweenShots - GetWorld()->TimeSeconds, 0.0f);
@@ -140,4 +186,11 @@ void AFPSWeapon::StartFire()
 void AFPSWeapon::StopFire()
 {
     GetWorldTimerManager().ClearTimer(TimerHandle);
+}
+
+void AFPSWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+    DOREPLIFETIME_CONDITION(AFPSWeapon, HitScanTrace, COND_SkipOwner);
 }
