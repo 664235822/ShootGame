@@ -11,7 +11,8 @@ class SHOOTGAME_API UFPSHealthComponent : public UActorComponent
 {
     GENERATED_BODY()
 
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams(FOnHealthChangedSignature, UFPSHealthComponent*, HealthComponent, float,
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams(FOnHealthChangedSignature, UFPSHealthComponent*, OwningHealthComponent,
+                                                 float,
                                                  Health, float, HealthDelta, const class UDamageType*, DamageType,
                                                  class AController*, InstigatedBy, AActor*, DamageCauser);
 
@@ -23,7 +24,7 @@ protected:
     // Called when the game starts
     virtual void BeginPlay() override;
 
-    UPROPERTY(Replicated, EditDefaultsOnly, BlueprintReadOnly, Category = "HealthComponent")
+    UPROPERTY(ReplicatedUsing = OnRep_Health, EditDefaultsOnly, BlueprintReadOnly, Category = "HealthComponent")
     float Health;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HealthComponent")
@@ -33,6 +34,9 @@ protected:
     void HandleTakeAnyDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
                              class AController* InstigatedBy, AActor* DamageCauser);
 
+    UFUNCTION()
+    void OnRep_Health(float OldHealth);
+    
 public:
 
     UPROPERTY(BlueprintAssignable, Category = "Events")

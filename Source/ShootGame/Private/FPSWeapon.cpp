@@ -122,7 +122,7 @@ void AFPSWeapon::PlayFireEffect(FVector TraceEndPoint)
 
     if (TracerEffect)
     {
-        FVector MuzzleLocation = SkeletalMeshComponent->GetSocketLocation(MuzzleSocketName);
+        const FVector MuzzleLocation = SkeletalMeshComponent->GetSocketLocation(MuzzleSocketName);
 
         UParticleSystemComponent* TracerComponent = UGameplayStatics::SpawnEmitterAtLocation(
             GetWorld(), TracerEffect, MuzzleLocation);
@@ -159,7 +159,7 @@ void AFPSWeapon::PlayImpactEffect(EPhysicalSurface SurfaceType, FVector ImpactPo
 
     if (SelectEffect)
     {
-        FVector MuzzleLocation = SkeletalMeshComponent->GetSocketLocation(MuzzleSocketName);
+        const FVector MuzzleLocation = SkeletalMeshComponent->GetSocketLocation(MuzzleSocketName);
 
         FVector TraceDirection = ImpactPoint - MuzzleLocation;
         TraceDirection.Normalize();
@@ -178,7 +178,7 @@ void AFPSWeapon::OnRep_HitScanTrace()
 
 void AFPSWeapon::StartFire()
 {
-    float FirstDelay = FMath::Max(LastFireTime + TimeBetweenShots - GetWorld()->TimeSeconds, 0.0f);
+    const float FirstDelay = FMath::Max(LastFireTime + TimeBetweenShots - GetWorld()->TimeSeconds, 0.0f);
 
     GetWorldTimerManager().SetTimer(TimerHandle, this, &AFPSWeapon::Fire, TimeBetweenShots, true, FirstDelay);
 }

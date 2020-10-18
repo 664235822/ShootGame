@@ -4,6 +4,24 @@
     <projectFile>Intermediate/ProjectFiles/ShootGame.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4595af27-7e57-4ff4-a940-17f3130ef886" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,22 +33,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Core/Public/IOS/IOSPlatformCompilerSetup.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/ThirdParty/PhysX3/APEX_1.4/include/ApexDefs.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/ProjectileWeapon.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Core/Public/HAL/IConsoleManager.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/ShootGame.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://D:/Epic Games/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/ShootGame.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -39,15 +57,18 @@
       <list>
         <option value="$PROJECT_DIR$/Source/ShootGame/public/FPSCharacter.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/public/FPSPlayerController.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/ProjectileWeapon.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/ShootGame.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/ShootGame.Build.cs" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSTrackerBot.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSTrackerBot.cpp" />
       </list>
     </option>
   </component>
@@ -62,6 +83,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="C++ Project.ShootGame">
     <configuration name="ShootGame" type="CppProject" factoryName="C++ Project">
@@ -301,6 +323,13 @@
       <workItem from="1599298313523" duration="1510000" />
       <workItem from="1599748308161" duration="3593000" />
       <workItem from="1599817761212" duration="5224000" />
+      <workItem from="1600277570479" duration="357000" />
+      <workItem from="1600309234264" duration="16000" />
+      <workItem from="1601116309808" duration="1650000" />
+      <workItem from="1601454404827" duration="2883000" />
+      <workItem from="1601460419161" duration="11407000" />
+      <workItem from="1602995803929" duration="875000" />
+      <workItem from="1602997028975" duration="10534000" />
     </task>
     <servers />
   </component>
@@ -309,6 +338,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
@@ -321,73 +361,73 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="517" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1676.902@0.0.1676.902" timestamp="1599028486126" />
-    <state width="1632" height="233" key="GridCell.Tab.0.bottom" timestamp="1599823456152">
+    <state width="1632" height="233" key="GridCell.Tab.0.bottom" timestamp="1603008848879">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
-    <state width="1632" height="233" key="GridCell.Tab.0.center" timestamp="1599823456152">
+    <state width="1632" height="233" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1603008848879" />
+    <state width="1632" height="233" key="GridCell.Tab.0.center" timestamp="1603008848879">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
-    <state width="1632" height="233" key="GridCell.Tab.0.left" timestamp="1599823456152">
+    <state width="1632" height="233" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1603008848879" />
+    <state width="1632" height="233" key="GridCell.Tab.0.left" timestamp="1603008848879">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
-    <state width="1632" height="233" key="GridCell.Tab.0.right" timestamp="1599823456152">
+    <state width="1632" height="233" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1603008848879" />
+    <state width="1632" height="233" key="GridCell.Tab.0.right" timestamp="1603008848879">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="233" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1599823456152" />
-    <state width="1632" height="319" key="GridCell.Tab.1.bottom" timestamp="1599071322838">
+    <state width="1632" height="233" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1603008848879" />
+    <state width="1632" height="257" key="GridCell.Tab.1.bottom" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.1.bottom/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.1.center" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.1.bottom/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.1.center" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.1.center/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.1.left" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.1.center/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.1.left" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.1.left/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.1.right" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.1.left/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.1.right" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.1.right/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.2.bottom" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.1.right/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.2.bottom" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.2.bottom/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.2.center" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.2.bottom/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.2.center" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.2.center/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.2.left" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.2.center/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.2.left" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.2.left/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.2.right" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.2.left/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.2.right" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.2.right/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.3.bottom" timestamp="1599071322839">
+    <state width="1632" height="257" key="GridCell.Tab.2.right/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.3.bottom" timestamp="1601472375198">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.3.bottom/0.0.1676.902@0.0.1676.902" timestamp="1599071322839" />
-    <state width="1632" height="319" key="GridCell.Tab.3.center" timestamp="1599071322839">
+    <state width="1632" height="257" key="GridCell.Tab.3.bottom/0.0.1676.902@0.0.1676.902" timestamp="1601472375198" />
+    <state width="1632" height="257" key="GridCell.Tab.3.center" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.3.center/0.0.1676.902@0.0.1676.902" timestamp="1599071322839" />
-    <state width="1632" height="319" key="GridCell.Tab.3.left" timestamp="1599071322838">
+    <state width="1632" height="257" key="GridCell.Tab.3.center/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.3.left" timestamp="1601472375197">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.3.left/0.0.1676.902@0.0.1676.902" timestamp="1599071322838" />
-    <state width="1632" height="319" key="GridCell.Tab.3.right" timestamp="1599071322839">
+    <state width="1632" height="257" key="GridCell.Tab.3.left/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
+    <state width="1632" height="257" key="GridCell.Tab.3.right" timestamp="1601472375198">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.3.right/0.0.1676.902@0.0.1676.902" timestamp="1599071322839" />
-    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1599822781684">
+    <state width="1632" height="257" key="GridCell.Tab.3.right/0.0.1676.902@0.0.1676.902" timestamp="1601472375198" />
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1603001033688">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1599822781684" />
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1603001033688" />
   </component>
 </project>

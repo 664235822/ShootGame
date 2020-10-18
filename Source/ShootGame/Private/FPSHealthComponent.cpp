@@ -47,6 +47,13 @@ void UFPSHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage
     OnHealthChanged.Broadcast(this, Health, Damage, DamageType, InstigatedBy, DamageCauser);
 }
 
+void UFPSHealthComponent::OnRep_Health(float OldHealth)
+{
+    const float Damage = Health - OldHealth;
+
+    OnHealthChanged.Broadcast(this, Health, Damage, nullptr, nullptr, nullptr);
+}
+
 void UFPSHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);

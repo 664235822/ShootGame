@@ -40,7 +40,7 @@ protected:
     void EndZoom();
 
     UFUNCTION()
-    void OnHealthChanged(UFPSHealthComponent* HealthComponent, float Health, float HealthDelta,
+    void OnHealthChanged(UFPSHealthComponent* OwningHealthComponent, float Health, float HealthDelta,
                          const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")

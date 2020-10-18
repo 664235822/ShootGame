@@ -56,8 +56,8 @@ void AFPSCharacter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    float TargetFOV = bWantToZoom ? ZoomedFOV : DefaultFOV;
-    float CurrentFOV = FMath::FInterpTo(CameraComponent->FieldOfView, TargetFOV, DeltaTime, ZoomInterpSpeed);
+    const float TargetFOV = bWantToZoom ? ZoomedFOV : DefaultFOV;
+    const float CurrentFOV = FMath::FInterpTo(CameraComponent->FieldOfView, TargetFOV, DeltaTime, ZoomInterpSpeed);
     CameraComponent->SetFieldOfView(CurrentFOV);
 }
 
@@ -103,7 +103,7 @@ void AFPSCharacter::MoveRight(float Value)
     AddMovementInput(GetActorRightVector() * Value);
 }
 
-void AFPSCharacter::StartFire()
+void AFPSCharacter::StartFire() 
 {
     if (CurrentWeapon)
     {
@@ -111,7 +111,7 @@ void AFPSCharacter::StartFire()
     }
 }
 
-void AFPSCharacter::StopFire()
+void AFPSCharacter::StopFire() 
 {
     if (CurrentWeapon)
     {
@@ -139,7 +139,7 @@ void AFPSCharacter::EndZoom()
     bWantToZoom = false;
 }
 
-void AFPSCharacter::OnHealthChanged(UFPSHealthComponent* HealthComponent, float Health, float HealthDelta,
+void AFPSCharacter::OnHealthChanged(UFPSHealthComponent* OwningHealthComponent, float Health, float HealthDelta,
                                     const class UDamageType* DamageType, class AController* InstigatedBy,
                                     AActor* DamageCauser)
 {
