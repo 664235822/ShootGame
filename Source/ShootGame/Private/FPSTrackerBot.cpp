@@ -111,6 +111,8 @@ void AFPSTrackerBot::SelfDestruct()
 
 void AFPSTrackerBot::NotifyActorBeginOverlap(AActor* OtherActor)
 {
+    Super::NotifyActorBeginOverlap(OtherActor);
+
     if (bStartSelfDestruction)
     {
         return;
