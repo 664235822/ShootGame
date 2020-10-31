@@ -2,6 +2,8 @@
 
 
 #include "FPSHealthComponent.h"
+
+#include "FPSGameMode.h"
 #include "Net/UnrealNetwork.h"
 
 // Sets default values for this component's properties
@@ -10,8 +12,6 @@ UFPSHealthComponent::UFPSHealthComponent()
     // Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
     // off to improve performance if you don't need them.
     // PrimaryComponentTick.bCanEverTick = true;
-
-    DefaultHealth = 100.0f;
 
     SetIsReplicated(true);
 }
@@ -37,14 +37,25 @@ void UFPSHealthComponent::BeginPlay()
 void UFPSHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
                                               AController* InstigatedBy, AActor* DamageCauser)
 {
-    if (Damage <= 0.0f)
+    if (Damage <= 0.0f || bIsDead)
     {
         return;
     }
 
     Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
 
+    bIsDead = Health <= 0.0f;
+
     OnHealthChanged.Broadcast(this, Health, Damage, DamageType, InstigatedBy, DamageCauser);
+
+    if (bIsDead)
+    {
+        AFPSGameMode* GameMode = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
+        if (GameMode)
+        {
+            GameMode->OnActorKilled.Broadcast(GetOwner(), DamageCauser, InstigatedBy);
+        }
+    }
 }
 
 void UFPSHealthComponent::OnRep_Health(float OldHealth)
@@ -52,6 +63,11 @@ void UFPSHealthComponent::OnRep_Health(float OldHealth)
     const float Damage = Health - OldHealth;
 
     OnHealthChanged.Broadcast(this, Health, Damage, nullptr, nullptr, nullptr);
+}
+
+float UFPSHealthComponent::GetHealth() const
+{
+    return Health;
 }
 
 void UFPSHealthComponent::Heal(float HealAmount)

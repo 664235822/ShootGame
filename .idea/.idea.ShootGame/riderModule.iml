@@ -35,6 +35,7 @@
     <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/PerforceSourceControl" />
     <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/PlasticSourceControl" />
     <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/RenderDocPlugin" />
+    <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/RiderLink" />
     <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/RiderSourceCodeAccess" />
     <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/SubversionSourceControl" />
     <content url="file://D:/Epic Games/UE_4.25/Engine/Plugins/Developer/TraceDataFiltering" />

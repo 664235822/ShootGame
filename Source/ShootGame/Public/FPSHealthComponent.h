@@ -28,7 +28,9 @@ protected:
     float Health;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HealthComponent")
-    float DefaultHealth;
+    float DefaultHealth = 100.0f;
+    
+    bool bIsDead = false;
 
     UFUNCTION()
     void HandleTakeAnyDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
@@ -36,8 +38,10 @@ protected:
 
     UFUNCTION()
     void OnRep_Health(float OldHealth);
-    
+
 public:
+
+    float GetHealth() const;
 
     UPROPERTY(BlueprintAssignable, Category = "Events")
     FOnHealthChangedSignature OnHealthChanged;
