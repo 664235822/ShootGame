@@ -6,6 +6,7 @@
 #include "FPSGameState.h"
 #include "FPSHealthComponent.h"
 #include "FPSPlayerState.h"
+#include "Runtime/Engine/Public/EngineUtils.h"
 
 AFPSGameMode::AFPSGameMode()
 {
@@ -79,14 +80,8 @@ void AFPSGameMode::CheckWaveState()
 
     bool bIsAnyBotAlive = false;
 
-    for (FConstPawnIterator Iterator = GetWorld()->GetPawnIterator(); Iterator; ++Iterator)
+    for (TActorIterator<APawn> Pawn(GetWorld(), APawn::StaticClass()); Pawn; ++Pawn)
     {
-        APawn* Pawn = Iterator->Get();
-        if (Pawn == nullptr || Pawn->IsPlayerControlled())
-        {
-            continue;
-        }
-
         UFPSHealthComponent* HealthComponent = Cast<UFPSHealthComponent>(
             Pawn->GetComponentByClass(UFPSHealthComponent::StaticClass()));
 

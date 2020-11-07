@@ -9,7 +9,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Runtime/NavigationSystem/Public/NavigationSystem.h"
 #include "Runtime/NavigationSystem/Public/NavigationPath.h"
-#include "GameFramework/Character.h"
+#include "Runtime/Engine/Public/EngineUtils.h"
 
 // Sets default values
 AFPSTrackerBot::AFPSTrackerBot()
@@ -47,14 +47,45 @@ void AFPSTrackerBot::BeginPlay()
 
 FVector AFPSTrackerBot::GetNextPathPoint()
 {
-    ACharacter* Character = UGameplayStatics::GetPlayerCharacter(this, 0);
-    UNavigationPath* NavigationPath = UNavigationSystemV1::FindPathToActorSynchronously(
-        this, GetActorLocation(), Character);
-    if (NavigationPath)
+    APawn* BestPawn = nullptr;
+    float NearestTargetDistance = FLT_MAX;
+
+    for (FConstPawnIterator Iterator = GetWorld()->GetPawnIterator(); Iterator; ++Iterator)
     {
-        if (NavigationPath->PathPoints.Num() > 0)
+        APawn* TestPawn = Iterator->Get();
+        if (TestPawn == nullptr || UFPSHealthComponent::IsFriendly(TestPawn, this))
         {
-            return NavigationPath->PathPoints[1];
+            continue;
+        }
+
+        UFPSHealthComponent* TestHealthComponent = Cast<UFPSHealthComponent>(
+            TestPawn->GetComponentByClass(UFPSHealthComponent::StaticClass()));
+
+        if (TestHealthComponent && TestHealthComponent->GetHealth() > 0)
+        {
+            const float Distance = (TestPawn->GetActorLocation() - GetActorLocation()).Size();
+
+            if (Distance < NearestTargetDistance)
+            {
+                NearestTargetDistance = Distance;
+                BestPawn = TestPawn;
+            }
+        }
+    }
+
+    if (BestPawn)
+    {
+        UNavigationPath* NavigationPath = UNavigationSystemV1::FindPathToActorSynchronously(
+            this, GetActorLocation(), BestPawn);
+
+        GetWorldTimerManager().ClearTimer(TimerHandle_RefreshPath);
+        GetWorldTimerManager().SetTimer(TimerHandle_RefreshPath, this, &AFPSTrackerBot::RefreshPath, 5.0f, false, 0.0f);
+        if (NavigationPath)
+        {
+            if (NavigationPath->PathPoints.Num() > 0)
+            {
+                return NavigationPath->PathPoints[1];
+            }
         }
     }
 
@@ -119,7 +150,7 @@ void AFPSTrackerBot::NotifyActorBeginOverlap(AActor* OtherActor)
     }
 
     AFPSCharacter* Character = Cast<AFPSCharacter>(OtherActor);
-    if (Character)
+    if (Character && !UFPSHealthComponent::IsFriendly(Character, this))
     {
         if (GetLocalRole() == ROLE_Authority)
         {
@@ -136,6 +167,11 @@ void AFPSTrackerBot::NotifyActorBeginOverlap(AActor* OtherActor)
 void AFPSTrackerBot::DamageSelf()
 {
     UGameplayStatics::ApplyDamage(this, 20.0f, GetInstigatorController(), this, nullptr);
+}
+
+void AFPSTrackerBot::RefreshPath()
+{
+    NextPathPoint = GetNextPathPoint();
 }
 
 // Called every frame

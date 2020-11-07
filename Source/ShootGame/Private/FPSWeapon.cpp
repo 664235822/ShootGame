@@ -66,6 +66,10 @@ void AFPSWeapon::Fire()
         MyOwner->GetActorEyesViewPoint(EyeLocation, EyeRotation);
 
         FVector ShotDirection = EyeRotation.Vector();
+
+        float HalfRad = FMath::DegreesToRadians(BulletSpread);
+        ShotDirection = FMath::VRandCone(ShotDirection, HalfRad, HalfRad);
+
         FVector TraceEnd = EyeLocation + (ShotDirection * 10000);
 
         FCollisionQueryParams QueryOParams;
@@ -94,7 +98,7 @@ void AFPSWeapon::Fire()
 
             UGameplayStatics::ApplyPointDamage(HitActor, CurrentDamage, ShotDirection, Hit,
                                                MyOwner->GetInstigatorController(),
-                                               this, DamageType);
+                                               MyOwner, DamageType);
 
             PlayImpactEffect(SurfaceType, Hit.ImpactPoint);
 

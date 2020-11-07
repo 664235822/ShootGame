@@ -66,10 +66,10 @@ protected:
     bool bStartSelfDestruction = false;
 
     UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
-    float ExplosionRadius = 200.0f;
+    float ExplosionRadius = 350.0f;
 
     UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
-    float ExplosionDamage = 40.0f;
+    float ExplosionDamage = 60.0f;
 
     UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
     float SelfDamageInterval = 0.5f;
@@ -83,6 +83,10 @@ protected:
 
     UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
     USoundCue* ExplodeSound;
+
+    FTimerHandle TimerHandle_RefreshPath;
+
+    void RefreshPath();
 
 public:
     // Called every frame

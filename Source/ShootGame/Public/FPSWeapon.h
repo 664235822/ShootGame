@@ -9,8 +9,9 @@
 USTRUCT()
 struct FHitScanTrace
 {
-    GENERATED_BODY();
-   
+    GENERATED_BODY()
+    ;
+
     UPROPERTY()
     TEnumAsByte<EPhysicalSurface> SurfaceType;
 
@@ -79,6 +80,9 @@ protected:
     float RateOfFire;
 
     float TimeBetweenShots;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Weapon", meta = (ClampMin = 0.0f))
+    float BulletSpread = 1.0f;
 
     UPROPERTY(ReplicatedUsing = OnRep_HitScanTrace)
     FHitScanTrace HitScanTrace;

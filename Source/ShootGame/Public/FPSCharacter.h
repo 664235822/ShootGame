@@ -27,10 +27,6 @@ protected:
 
     void MoveRight(float Value);
 
-    void StartFire();
-
-    void StopFire();
-
     void BeginCrouch();
 
     void EndCrouch();
@@ -82,4 +78,10 @@ public:
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
     virtual FVector GetPawnViewLocation() const override;
+
+    UFUNCTION(BlueprintCallable, Category = "Player")
+    void StartFire();
+
+    UFUNCTION(BlueprintCallable, Category = "Player")
+    void StopFire();
 };

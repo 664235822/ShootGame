@@ -29,7 +29,7 @@ protected:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HealthComponent")
     float DefaultHealth = 100.0f;
-    
+
     bool bIsDead = false;
 
     UFUNCTION()
@@ -48,4 +48,10 @@ public:
 
     UFUNCTION(BlueprintCallable, Category = "HealthComponent")
     void Heal(float HealAmount);
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player")
+    uint8 TeamNumber = 0;
+
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Player")
+    static bool IsFriendly(AActor* ActorA, AActor* ActorB);
 };

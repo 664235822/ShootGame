@@ -4,6 +4,9 @@
     <projectFile>Intermediate/ProjectFiles/ShootGame.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -59,14 +62,8 @@
         <option value="$PROJECT_DIR$/Source/ShootGame/public/FPSPlayerController.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/ProjectileWeapon.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/ShootGame.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/ShootGame.Build.cs" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSTrackerBot.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSTrackerBot.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSPickupActor.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPickupActor.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPowerupActor.cpp" />
@@ -75,10 +72,16 @@
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSGameState.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSPlayerState.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPlayerState.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSGameMode.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSGameMode.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSTrackerBot.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSTrackerBot.cpp" />
       </list>
     </option>
   </component>
@@ -345,6 +348,12 @@
       <workItem from="1603771980924" duration="2148000" />
       <workItem from="1604058185025" duration="6056000" />
       <workItem from="1604114025034" duration="8213000" />
+      <workItem from="1604372134590" duration="1241000" />
+      <workItem from="1604375032401" duration="622000" />
+      <workItem from="1604377661367" duration="1538000" />
+      <workItem from="1604730399480" duration="7378000" />
+      <workItem from="1604746108432" duration="4734000" />
+      <workItem from="1604752951955" duration="2854000" />
     </task>
     <servers />
   </component>
@@ -377,77 +386,81 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="517" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1676.902@0.0.1676.902" timestamp="1599028486126" />
-    <state width="1632" height="220" key="GridCell.Tab.0.bottom" timestamp="1604124471961">
+    <state width="1632" height="319" key="GridCell.Tab.0.bottom" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="220" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604124471961" />
-    <state width="1632" height="220" key="GridCell.Tab.0.center" timestamp="1604124471961">
+    <state width="1632" height="319" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.0.center" timestamp="1604756538783">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="220" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1604124471961" />
-    <state width="1632" height="220" key="GridCell.Tab.0.left" timestamp="1604124471961">
+    <state width="1632" height="319" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1604756538783" />
+    <state width="1632" height="319" key="GridCell.Tab.0.left" timestamp="1604756538783">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="220" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1604124471961" />
-    <state width="1632" height="220" key="GridCell.Tab.0.right" timestamp="1604124471961">
+    <state width="1632" height="319" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1604756538783" />
+    <state width="1632" height="319" key="GridCell.Tab.0.right" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="220" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1604124471961" />
-    <state width="1632" height="257" key="GridCell.Tab.1.bottom" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.1.bottom" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.1.bottom/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.1.center" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.1.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.1.center" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.1.center/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.1.left" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.1.center/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.1.left" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.1.left/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.1.right" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.1.left/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.1.right" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.1.right/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.2.bottom" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.1.right/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.2.bottom" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.2.bottom/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.2.center" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.2.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.2.center" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.2.center/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.2.left" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.2.center/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.2.left" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.2.left/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.2.right" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.2.left/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.2.right" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.2.right/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.3.bottom" timestamp="1601472375198">
+    <state width="1632" height="319" key="GridCell.Tab.2.right/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.3.bottom" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.3.bottom/0.0.1676.902@0.0.1676.902" timestamp="1601472375198" />
-    <state width="1632" height="257" key="GridCell.Tab.3.center" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.3.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.3.center" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.3.center/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.3.left" timestamp="1601472375197">
+    <state width="1632" height="319" key="GridCell.Tab.3.center/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.3.left" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.3.left/0.0.1676.902@0.0.1676.902" timestamp="1601472375197" />
-    <state width="1632" height="257" key="GridCell.Tab.3.right" timestamp="1601472375198">
+    <state width="1632" height="319" key="GridCell.Tab.3.left/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="319" key="GridCell.Tab.3.right" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="257" key="GridCell.Tab.3.right/0.0.1676.902@0.0.1676.902" timestamp="1601472375198" />
+    <state width="1632" height="319" key="GridCell.Tab.3.right/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
     <state x="346" y="95" key="SettingsEditor" timestamp="1603515791303">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="346" y="95" key="SettingsEditor/0.0.1676.902@0.0.1676.902" timestamp="1603515791303" />
-    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1604117349618">
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1604745002150">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1604117349618" />
+    <state x="500" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1604745002150" />
+    <state x="559" y="362" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604745615716">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="559" y="362" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1676.902@0.0.1676.902" timestamp="1604745615716" />
   </component>
 </project>

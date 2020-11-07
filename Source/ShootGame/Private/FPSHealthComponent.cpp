@@ -42,6 +42,11 @@ void UFPSHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage
         return;
     }
 
+    if (DamageCauser != DamagedActor && IsFriendly(DamageCauser, DamagedActor))
+    {
+        return;
+    }
+
     Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
 
     bIsDead = Health <= 0.0f;
@@ -80,6 +85,26 @@ void UFPSHealthComponent::Heal(float HealAmount)
     Health = FMath::Clamp(Health + HealAmount, 0.0f, DefaultHealth);
 
     OnHealthChanged.Broadcast(this, Health, -HealAmount, nullptr, nullptr, nullptr);
+}
+
+bool UFPSHealthComponent::IsFriendly(AActor* ActorA, AActor* ActorB)
+{
+    if (ActorA == nullptr || ActorB == nullptr)
+    {
+        return true;
+    }
+
+    UFPSHealthComponent* HealthComponentA = Cast<UFPSHealthComponent>(
+        ActorA->GetComponentByClass(UFPSHealthComponent::StaticClass()));
+    UFPSHealthComponent* HealthComponentB = Cast<UFPSHealthComponent>(
+        ActorB->GetComponentByClass(UFPSHealthComponent::StaticClass()));
+
+    if (HealthComponentA == nullptr || HealthComponentB == nullptr)
+    {
+        return true;
+    }
+
+    return HealthComponentA->TeamNumber == HealthComponentB->TeamNumber;
 }
 
 void UFPSHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
