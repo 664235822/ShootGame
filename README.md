@@ -8,4 +8,6 @@
 * 项目模板 (https://github.com/tomlooman/SimpleFPSTemplate)
 * 项目源代码 (https://github.com/tomlooman/CoopHordeShooter)
 
+![gameimg](https://github.com/664235822/ShootGame/blob/master/img/game.png?raw=true)
+
 Developed with Unreal Engine 4
