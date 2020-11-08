@@ -20,15 +20,8 @@ AFPSWeapon::AFPSWeapon()
     SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMeshComponent"));
     RootComponent = SkeletalMeshComponent;
 
-    MuzzleSocketName = "MuzzleSocket";
-    TracerTargetName = "Target";
-
-    BaseDamage = 20.0f;
-
-    RateOfFire = 600.0f;
-
     SetReplicates(true);
-
+    
     NetUpdateFrequency = 66.0f;
     MinNetUpdateFrequency = 33.0f;
 }

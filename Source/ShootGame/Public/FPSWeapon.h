@@ -49,13 +49,13 @@ protected:
     TSubclassOf<UDamageType> DamageType;
 
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
-    float BaseDamage;
+    float BaseDamage = 20.0f;;
 
     UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-    FName MuzzleSocketName;
+    FName MuzzleSocketName = "MuzzleSocket";
 
     UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-    FName TracerTargetName;
+    FName TracerTargetName = "Target";
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
     UParticleSystem* MuzzleEffect;
@@ -77,7 +77,7 @@ protected:
     float LastFireTime;
 
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
-    float RateOfFire;
+    float RateOfFire = 600.0f;
 
     float TimeBetweenShots;
 

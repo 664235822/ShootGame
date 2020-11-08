@@ -55,17 +55,17 @@ protected:
     TSubclassOf<AFPSWeapon> WeaponClass;
 
     UPROPERTY(VisibleDefaultsOnly, Category = "Weapon")
-    FName WeaponSocketName;
+    FName WeaponSocketName = "WeaponSocket";
 
     bool bWantToZoom;
 
     UPROPERTY(EditDefaultsOnly, Category = "Player")
-    float ZoomedFOV;
+    float ZoomedFOV = 65.0f;
 
     float DefaultFOV;
 
     UPROPERTY(EditDefaultsOnly, Category = "Player", meta = (ClampMin = 0.1f, ClampMax = 100.0f))
-    float ZoomInterpSpeed;
+    float ZoomInterpSpeed = 20.0f;;
 
     UPROPERTY(Replicated, BlueprintReadOnly, Category = "Player")
     bool bDied = false;

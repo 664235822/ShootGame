@@ -80,10 +80,16 @@ void AFPSGameMode::CheckWaveState()
 
     bool bIsAnyBotAlive = false;
 
-    for (TActorIterator<APawn> Pawn(GetWorld(), APawn::StaticClass()); Pawn; ++Pawn)
+    for (FConstPawnIterator Iterator = GetWorld()->GetPawnIterator(); Iterator; ++Iterator)
     {
+        APawn* TestPawn = Iterator->Get();
+        if (TestPawn == nullptr || TestPawn->IsPlayerControlled())
+        {
+            continue;
+        }
+
         UFPSHealthComponent* HealthComponent = Cast<UFPSHealthComponent>(
-            Pawn->GetComponentByClass(UFPSHealthComponent::StaticClass()));
+            TestPawn->GetComponentByClass(UFPSHealthComponent::StaticClass()));
 
         if (HealthComponent && HealthComponent->GetHealth() > 0)
         {

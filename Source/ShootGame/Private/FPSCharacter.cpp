@@ -21,10 +21,7 @@ AFPSCharacter::AFPSCharacter()
 
     FPSHealthComponent = CreateDefaultSubobject<UFPSHealthComponent>(TEXT("HealthComponent"));
 
-    ZoomedFOV = 65.0f;
-    ZoomInterpSpeed = 20.0f;
-
-    WeaponSocketName = "WeaponSocket";
+    SetReplicates(true);
 }
 
 // Called when the game starts or when spawned

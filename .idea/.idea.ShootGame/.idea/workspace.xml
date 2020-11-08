@@ -66,22 +66,22 @@
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/ProjectileWeapon.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSPickupActor.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPickupActor.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPowerupActor.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSPowerupActor.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSGameState.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSGameState.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSPlayerState.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPlayerState.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSGameMode.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSGameMode.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSHealthComponent.h" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" />
-        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSTrackerBot.h" />
         <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSTrackerBot.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Public/FPSWeapon.h" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSHealthComponent.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSPowerupActor.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSWeapon.cpp" />
+        <option value="$PROJECT_DIR$/Source/ShootGame/Private/FPSGameMode.cpp" />
       </list>
     </option>
   </component>
@@ -354,6 +354,7 @@
       <workItem from="1604730399480" duration="7378000" />
       <workItem from="1604746108432" duration="4734000" />
       <workItem from="1604752951955" duration="2854000" />
+      <workItem from="1604801037408" duration="2340000" />
     </task>
     <servers />
   </component>
@@ -386,22 +387,22 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="517" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1676.902@0.0.1676.902" timestamp="1599028486126" />
-    <state width="1632" height="319" key="GridCell.Tab.0.bottom" timestamp="1604756538784">
+    <state width="1632" height="220" key="GridCell.Tab.0.bottom" timestamp="1604803265472">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
-    <state width="1632" height="319" key="GridCell.Tab.0.center" timestamp="1604756538783">
+    <state width="1632" height="220" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604803265472" />
+    <state width="1632" height="220" key="GridCell.Tab.0.center" timestamp="1604803265471">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1604756538783" />
-    <state width="1632" height="319" key="GridCell.Tab.0.left" timestamp="1604756538783">
+    <state width="1632" height="220" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1604803265471" />
+    <state width="1632" height="220" key="GridCell.Tab.0.left" timestamp="1604803265471">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1604756538783" />
-    <state width="1632" height="319" key="GridCell.Tab.0.right" timestamp="1604756538784">
+    <state width="1632" height="220" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1604803265471" />
+    <state width="1632" height="220" key="GridCell.Tab.0.right" timestamp="1604803265472">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1632" height="319" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1604756538784" />
+    <state width="1632" height="220" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1604803265472" />
     <state width="1632" height="319" key="GridCell.Tab.1.bottom" timestamp="1604756538784">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
