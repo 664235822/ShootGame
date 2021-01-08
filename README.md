@@ -8,6 +8,11 @@
 * 项目模板 (https://github.com/tomlooman/SimpleFPSTemplate)
 * 项目源代码 (https://github.com/tomlooman/CoopHordeShooter)
 
+### 自定义资源
+
+* 场景：虚幻商城资源 WesternDesertTown
+* 人物模型：Adobe mixamo
+
 ![gameimg](https://github.com/664235822/ShootGame/blob/master/img/game.png?raw=true)
 
 Developed with Unreal Engine 4
