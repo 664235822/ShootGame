@@ -9,7 +9,7 @@ public class ShootGame : ModuleRules
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicDependencyModuleNames.AddRange(new string[]
-            {"Core", "CoreUObject", "Engine", "InputCore", "NavigationSystem"});
+            {"Core", "CoreUObject", "Engine", "InputCore", "PhysicsCore", "NavigationSystem"});
 
         PrivateDependencyModuleNames.AddRange(new string[] { });
 

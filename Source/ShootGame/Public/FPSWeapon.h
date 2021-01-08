@@ -9,8 +9,7 @@
 USTRUCT()
 struct FHitScanTrace
 {
-    GENERATED_BODY()
-    ;
+    GENERATED_BODY();
 
     UPROPERTY()
     TEnumAsByte<EPhysicalSurface> SurfaceType;
@@ -70,7 +69,7 @@ protected:
     UParticleSystem* TracerEffect;
 
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
-    TSubclassOf<UCameraShake> FireCameraShake;
+    TSubclassOf<UMatineeCameraShake> FireCameraShake;
 
     FTimerHandle TimerHandle;
 
